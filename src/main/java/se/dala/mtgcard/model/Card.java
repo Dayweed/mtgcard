@@ -5,17 +5,14 @@ import se.dala.mtgcard.model.enums.Rarity;
 
 import java.util.*;
 
-public final class Card {
+public abstract class Card {
     private final UUID id;
     private String name;
     private List<Color> colors;
     private Rarity rarity;
 
-    protected Card(UUID id, String name, List<Color> colors, Rarity rarity) {
+    public Card(UUID id) {
         this.id = id;
-        this.name = name;
-        this.colors = colors;
-        this.rarity = rarity;
     }
 
     public String getName() {
