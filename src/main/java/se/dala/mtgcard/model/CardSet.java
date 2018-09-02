@@ -1,37 +1,47 @@
 package se.dala.mtgcard.model;
 
+import java.util.List;
+
 public final class CardSet {
     private String name;
-    private String setInfo;
-    private int cardAmount;
+    private String info;
+    private List<Card> cardList;
 
-    public CardSet(String name, String info, int cardAmount) {
+    public CardSet(String name, String info, int cardAmount, List<Card> cardList) {
         this.name = name;
-        this.setInfo = info;
-        this.cardAmount = cardAmount;
+        this.info = info;
+        this.cardList = cardList;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
+    public String setName(String name) {
         this.name = name;
+        return name;
     }
 
-    public String getSetInfo() {
-        return setInfo;
+    public String getInfo() {
+        return info;
     }
 
-    public void setSetInfo(String setInfo) {
-        this.setInfo = setInfo;
+    public String setInfo(String info) {
+        this.info = info;
+        return info;
     }
 
-    public int getCardAmount() {
-        return cardAmount;
+    public List<Card> getCardList() {
+        return cardList;
     }
 
-    public void setCardAmount(int cardAmount) {
-        this.cardAmount = cardAmount;
+    public List <Card> setCardList(List<Card> cardList) {
+        this.cardList = cardList;
+        return cardList;
+    }
+
+    public Card addCardToCardList(Card newCard) {
+        cardList.add(newCard);
+        return cardList.get(cardList.size());
     }
 }
